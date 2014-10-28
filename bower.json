@@ -1,0 +1,22 @@
+{
+  "name": "sweepstakes-js",
+  "version": "0.0.1",
+  "authors": [
+    "Ante Lucic <alucic@extensionengine.com>"
+  ],
+  "description": "Sweepstakes javascript component",
+  "main": "app.js",
+  "keywords": [
+    "sweeps"
+  ],
+  "license": "MIT",
+  "homepage": "www.refinery29.com",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

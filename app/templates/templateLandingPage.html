@@ -1,0 +1,48 @@
+<h3 class="instory-header">Refinery + <% $.each(data.brands, function(i, brand){ %><%= brand.name%><% }); %><span> present</span></h3>
+<div class="content-wrapper">
+  <div class="responsive-content">
+    <h1 class="content-header">
+      <span>DON'T FORGET</span> TO LIKE US!
+    </h1>
+    <div class="form-container">
+      <form method="post" class="responsive-form">
+        <h2 class="sign-up-text"><%= data.call_to_action%></h2>
+        <div class="responsive-inputs">
+          <input name="name" type="text" placeholder="First Name" data-placeholder="First Name">
+          <input name="lastname" type="text" placeholder="Last Name" data-placeholder="Last Name">
+          <input class="input-full-width" name="email" type="email" placeholder="Email Address" data-placeholder="Email Address">
+          <input name="zipcode" type="text" placeholder="Zip Code" data-placeholder="Zip Code">
+          <input type="submit" value="Enter" class="button button-cta">
+          <input type="hidden" name="action" value="signup">
+        </div>
+        <div class="responsive-agreement">
+          <input class="responsive-check-box" type="checkbox" name="agree_lists" checked>
+          <div class="responsive-agreement-copy">By entering I agree to receive the latest and greatest updates from Refinery29 and <% $.each(data.brands, function(brand){ %><%= brand.name%> <%});%>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="facebook-sponsors clearfix">
+      <div class="sponsor-row">
+        <div class="sponsor">
+          <% if(data.swap_social_buttons){ %>
+            <div class="sponsor-like follow" data-label="Refinery29 Pinterest Follow"><a data-pin-do="buttonFollow" href="<%= data.share_url%>">Follow Us!</a></div>
+            <%} else {%>
+            <fb:like class="sponsor-like" layout="button" ref="sweeps-r29" href="<%= data.share_url%>" width="90" ref="fb-r29"></fb:like>
+            <%}%>
+          <span class="sponsor-name">REFINERY29</span>
+        </div>
+        <% $.each(data.brands, function(brand){%>
+        <div class="sponsor">
+          <%if (data.swap_social_buttons){%>
+            <div class="sponsor-like follow" data-label="<%= brand.name%> Pinterest Follow"><a data-pin-do="buttonFollow" href="<%= brand.pinterest_url%>">Follow Us!</a></div>
+          <%} else {%>
+          <fb:like class="sponsor-like" layout="button" ref="sweeps-r29" href="<%= brand.facebook_url%>" width="90" ref="fb-r29"></fb:like>
+          <%}%>
+          <span class="sponsor-name"><%= brand.name%></span>
+        </div>
+        <%});%>
+      </div>
+    </div>
+  </div>
+</div>

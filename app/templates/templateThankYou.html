@@ -1,0 +1,29 @@
+<div>
+  <h1 class="content-header thank-you"><span>Thanks for entering</span></h1>
+  <h1 class="content-header small">Now share this contest with a friend</h1>
+  <div class="form-container thank-you">
+    <h2 class="content-header small"><span>Share via email<span></h2>
+    <form method="POST" class="responsive-form">
+      <div class="responsive-inputs">
+        <textarea name="friend_invites" class="friend-invites" placeholder="Enter friend's email addresses, separated by a commas" data-placeholder="Enter friend\'s email addresses, separated by a commas"></textarea>
+        <input type="hidden" name="action" value="invite">
+        <input type="hidden" name="email_invite" value="">
+        <input type="submit" value="Invite" class="btn-invite button button-cta">
+      </div>
+    </form>
+    <h2 class="content-header social small"><span>Share via social<span></h2>
+    <button class="share-button-facebook icon-facebook share-buttons" data-url="<%= data.shareFbUrl%>"></button>
+    <button class="share-button-twitter icon-twitter share-buttons" data-url="<%= data.shareTwitterUrl%>" onclick=""></button>
+    <button class="share-button-pinterest icon-pinterest share-buttons" data-url="<%= data.sharePinterestUrl%>"></button>
+    <ul class="skip">
+      <li><a href="/sweeps/sweeps-slug/invites-sent" class="skip-copy">I\'d rather not spread the word</a></li>
+      <li><a href="/sweeps/sweeps-slug/invites-sent" class="skip-arrow">l</a></li>
+    </ul>
+  </div>
+  <ul class="rules-link-container">
+    <li class="privacy-policy"><a href="<%= data.rules_url%>" target="_blank">Official Rules</a></li>
+    <% $.each(data.brands, function(brand){ %>
+    <li class="privacy-policy">+</li>
+    <li class="privacy-policy"><a href="<%=brand.privacy_url%>" target="_blank"><%= brand.name %> Privacy Policy</a></li><% }); %>
+  </ul>
+</div>
